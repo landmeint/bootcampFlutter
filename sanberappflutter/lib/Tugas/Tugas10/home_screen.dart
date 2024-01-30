@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import '../Tugas9/drawer_screen.dart';
+import '../Tugas11/routes.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -8,9 +11,25 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
+  int currentTab = 0;
+  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar:AppBar(
+        title: const Text("Santravel", style: TextStyle(
+          color: Colors.white,
+          fontWeight: FontWeight.w600)),
+        actions: const <Widget>[
+          Padding(padding: EdgeInsets.all(8.0),
+          child: Icon(Icons.search, color: Colors.white)
+          )
+        ],
+        backgroundColor:   Color.fromARGB(255, 91, 183, 236)
+      ),
+      drawer: const DrawerScreen(),
       body: Center(
         child: Container(
           padding: EdgeInsets.all(16),
@@ -138,6 +157,83 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
           )
         )
+      ),
+      bottomNavigationBar: BottomAppBar(
+        shape: CircularNotchedRectangle(),
+        notchMargin: 10,
+        child: Container(
+          height: 60,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  MaterialButton(
+                    minWidth: 40,
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/');
+                      currentTab = 0;
+                    },
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.home,
+                          color: currentTab == 0 ? Colors.blue : Colors.grey,
+                        ),
+                        Text(
+                          'Home',
+                          style: TextStyle(color: currentTab == 0 ? Colors.blue : Colors.grey)
+                        )
+                      ]
+                    )
+                  ),
+                  MaterialButton(
+                    minWidth: 40,
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/search');
+                      currentTab = 1;
+                    },
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.search,
+                          color: currentTab == 1 ? Colors.blue : Colors.grey,
+                        ),
+                        Text(
+                          'Search',
+                          style: TextStyle(color: currentTab == 1 ? Colors.blue : Colors.grey)
+                        )
+                      ]
+                    )
+                  ),
+                  MaterialButton(
+                    minWidth: 40,
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/about');
+                      currentTab = 3;
+                    },
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.person,
+                          color: currentTab == 2 ? Colors.blue : Colors.grey,
+                        ),
+                        Text(
+                          'About',
+                          style: TextStyle(color: currentTab == 2 ? Colors.blue : Colors.grey)
+                        )
+                      ]
+                    )
+                  ),
+                ],
+              )
+            ],
+          )
+        ) 
       ),
     );
   }

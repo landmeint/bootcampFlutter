@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sanberappflutter/Tugas/Tugas11/routes.dart';
 
 
 class LoginScreen extends StatefulWidget {
@@ -73,7 +74,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   borderRadius: BorderRadius.circular(10),
                   color:  Color.fromARGB(255, 116, 227, 255)),
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/');
+                  },
                   child: const Text(
                     "Login",
                     style: TextStyle(

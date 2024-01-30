@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../Tugas11/routes.dart';
+// import 'package:sanberappflutter/Tugas/Tugas11/routes.dart';
 
 
 class DrawerScreen extends StatefulWidget {
@@ -15,6 +17,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
       child: ListView(
         children: <Widget>[
           UserAccountsDrawerHeader(
+            decoration: BoxDecoration( color: Color.fromARGB(255, 91, 183, 236) ),
             accountName: const Text("Abdullah Zakaria"),
             currentAccountPicture: const CircleAvatar(
               backgroundImage: const AssetImage("assets/img/profile.jpg") 
@@ -50,6 +53,13 @@ class _DrawerScreenState extends State<DrawerScreen> {
             iconData: Icons.phone,
             title: "Calls",
             onTilePressed: (){},
+          ),
+          DrawerListTile(
+            iconData: Icons.logout,
+            title: "Logout",
+            onTilePressed: (){
+              Navigator.pushNamed(context, '/login');
+            },
           )
         ],
       )
