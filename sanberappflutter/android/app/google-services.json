@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "380484377413",
+    "project_id": "sanberauth-ebcf7",
+    "storage_bucket": "sanberauth-ebcf7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:380484377413:android:31ae92820f8b3ade267c2c",
+        "android_client_info": {
+          "package_name": "com.example.sanberappflutter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDldgYLnzv1driLRNi9PAA2A3JyZHXKyeQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

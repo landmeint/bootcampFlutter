@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 import '../Tugas11/routes.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 // import 'package:sanberappflutter/Tugas/Tugas11/routes.dart';
 
 
 class DrawerScreen extends StatefulWidget {
   const DrawerScreen({super.key});
+  
 
   @override
   State<DrawerScreen> createState() => _DrawerScreenState();
 }
 
 class _DrawerScreenState extends State<DrawerScreen> {
+  Future<void> _signOut() async {
+    await FirebaseAuth.instance.signOut();
+  } 
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -58,7 +63,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
             iconData: Icons.logout,
             title: "Logout",
             onTilePressed: (){
-              Navigator.pushNamed(context, '/login');
+              _signOut().then((value) => Navigator.pushNamed(context, '/login'));
             },
           )
         ],

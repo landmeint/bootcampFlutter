@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sanberappflutter/Tugas/Tugas11/routes.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 
 class LoginScreen extends StatefulWidget {
@@ -10,6 +11,11 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
+  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,8 +80,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   borderRadius: BorderRadius.circular(10),
                   color:  Color.fromARGB(255, 116, 227, 255)),
                 child: TextButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/');
+                  onPressed: () async {
+                    await _firebaseAuth.signInWithEmailAndPassword(
+                      email: _emailController.text, password: _emailController.text
+                      ).then((value) => Navigator.pushNamed(context, '/'));
                   },
                   child: const Text(
                     "Login",
@@ -104,7 +112,27 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
                 ],
               ),
-              
+              const SizedBox( height: 10 ),
+              Container(
+                height: 50,
+                width: double.infinity,
+                padding: EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  border: Border.all(color: Color.fromARGB(255, 116, 227, 255)),
+                  borderRadius: BorderRadius.circular(10),
+                  color:  Colors.white),
+                child: TextButton(
+                  onPressed: () async {
+                    await _firebaseAuth.createUserWithEmailAndPassword(
+                      email: _emailController.text, password: _passwordController.text);
+                  },
+                  child: const Text(
+                    "Register",
+                    style: TextStyle(
+                      color: Colors.black, fontWeight: FontWeight.w500)
+                  )
+                )
+              ),
               
             ],
           ),
