@@ -19,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    FirebaseAuth auth = FirebaseAuth.instance;
+    // FirebaseAuth auth = FirebaseAuth.instance;
     return Scaffold(
       appBar:AppBar(
         title: const Text("Santravel", style: TextStyle(

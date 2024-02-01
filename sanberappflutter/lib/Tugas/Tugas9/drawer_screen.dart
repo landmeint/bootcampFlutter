@@ -13,9 +13,9 @@ class DrawerScreen extends StatefulWidget {
 }
 
 class _DrawerScreenState extends State<DrawerScreen> {
-  Future<void> _signOut() async {
-    await FirebaseAuth.instance.signOut();
-  } 
+  // Future<void> _signOut() async {
+  //   await FirebaseAuth.instance.signOut();
+  // } 
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -63,7 +63,8 @@ class _DrawerScreenState extends State<DrawerScreen> {
             iconData: Icons.logout,
             title: "Logout",
             onTilePressed: (){
-              _signOut().then((value) => Navigator.pushNamed(context, '/login'));
+              // _signOut().then((value) => Navigator.pushNamed(context, '/login'));
+              Navigator.pushNamed(context, '/login');
             },
           )
         ],
