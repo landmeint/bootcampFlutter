@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'Tugas/Tugas10/login_screen.dart';
 import 'Tugas/Tugas11/routes.dart';
 import 'Tugas/Tugas12/get_data_screen.dart';
+import 'Tugas/Tugas13/get_data_screen.dart';
 
 
 
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      home: const GetDataScreen(),
+      home: const GetDataScreenStateManagement(),
     );
   }
 }
