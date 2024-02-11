@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "852171288192",
+    "project_id": "chiketto-auth",
+    "storage_bucket": "chiketto-auth.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:852171288192:android:8e93e2e61d18a9c1210065",
+        "android_client_info": {
+          "package_name": "com.example.chiketto"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyp5Ec45-L-V2Jq4ciTxVGV6ZMc7VcYD4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

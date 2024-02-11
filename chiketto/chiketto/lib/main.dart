@@ -1,14 +1,11 @@
+
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+
 import 'package:hexcolor/hexcolor.dart';
-import 'package:chiketto/pages/login/login_page.dart';
-import 'package:chiketto/pages/home/home_page.dart';
+import 'package:chiketto/pages/splash/splash_screen.dart';
+
 
 void main() {
-  SystemChrome.setSystemUIOverlayStyle( const SystemUiOverlayStyle(
-    statusBarColor: Colors.transparent,
-    statusBarIconBrightness: Brightness.dark
-  ));
   runApp(const MyApp());
 }
 
@@ -24,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         scaffoldBackgroundColor: HexColor("#FAF6E7")),
-      home: const HomePage(),
+      home: SplashScreen(),
     );
   }
 }

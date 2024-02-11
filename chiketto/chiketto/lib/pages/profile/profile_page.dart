@@ -48,7 +48,7 @@ class ProfilePage extends StatelessWidget {
               color: HexColor("#355952"),
               boxShadow: [
                 BoxShadow(
-                  offset: Offset(0, 5),
+                  offset: const Offset(0, 5),
                   color: HexColor("#EAB63E").withOpacity(.2),
                   blurRadius: 10,
                   spreadRadius: 5

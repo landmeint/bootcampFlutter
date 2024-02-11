@@ -1,5 +1,7 @@
+
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:chiketto/pages/home/home_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -10,8 +12,8 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   late Size mediaSize;
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
   bool rememberUser = false;
 
   @override
@@ -93,9 +95,9 @@ class _LoginPageState extends State<LoginPage> {
         Text("Masuk ke Chiketto", style: TextStyle(color: HexColor("#EAB63E")),),
         const SizedBox(height: 35),
         Text("Email Address", style: TextStyle(color: HexColor("#EAB63E")),),
-        _buildInputField(emailController),
+        _buildInputField(_emailController),
         Text("Password", style: TextStyle(color: HexColor("#EAB63E")),),
-        _buildInputField(passwordController, isPassword:true),
+        _buildInputField(_passwordController, isPassword:true),
         const SizedBox(height: 5),
         _buildRememberForgot(),
         const SizedBox(height: 10),
@@ -143,8 +145,9 @@ class _LoginPageState extends State<LoginPage> {
   Widget _buildLoginButton() {
     return ElevatedButton(
       onPressed: () {
-        debugPrint("Email: ${emailController.text}");
-        debugPrint("Password: ${passwordController.text}");
+        debugPrint("Email: ${_emailController.text}");
+        debugPrint("Password: ${_passwordController.text}");
+        Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage()));
       },
       style: ElevatedButton.styleFrom(
         shape: const StadiumBorder(),
